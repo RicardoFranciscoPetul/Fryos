@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableWithoutFeedback, Image } from 'react-native';
 import Title from '../Title';
 import { imagesGlobal } from '../../constants';
+import PropTypes from 'prop-types';
 
 import styles from './styles';
 
@@ -33,6 +34,11 @@ const Booking = ({ item, onPress }) => {
       </View>
     </TouchableWithoutFeedback>
   );
+};
+
+Booking.propTypes = {
+  item: PropTypes.object.isRequired,
+  onPress: PropTypes.func,
 };
 
 export default Booking;

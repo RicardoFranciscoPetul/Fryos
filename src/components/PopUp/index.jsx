@@ -12,6 +12,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import styles from './styles';
 import Title from '../Title';
 import { Colors } from '../../constants';
+import PropTypes from 'prop-types';
 
 const PopUp = ({ isVisible, children, onPress, onClose, ...props }) => {
   const [value, onChangeText] = useState('');
@@ -102,6 +103,12 @@ const PopUp = ({ isVisible, children, onPress, onClose, ...props }) => {
       </Modal>
     </View>
   );
+};
+
+PopUp.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  onPress: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default PopUp;
