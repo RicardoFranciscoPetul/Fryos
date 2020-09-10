@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   title: {
+    fontWeight: 'bold',
   },
   itemContainer: {
     flexDirection: 'row',
@@ -65,7 +66,6 @@ const styles = StyleSheet.create({
     width: 75,
   },
   textArea: {
-    // borderWidth: 0,
     height: 50,
   },
 });

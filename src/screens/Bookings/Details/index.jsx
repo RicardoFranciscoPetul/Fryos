@@ -22,7 +22,6 @@ const BookingDetails = ({ route, navigation }) => {
     if (!item.available) return;
     setModalVisible(true);
     setCurrentItem(item);
-    // setModalVisible(false)
   };
 
   const reserve = () => {
@@ -32,13 +31,15 @@ const BookingDetails = ({ route, navigation }) => {
   return (
     <ScrollView>
       <Container>
-        <PopUp
-          isVisible={modalVisible}
-          schedule={currentItem}
-          item={item}
-          onPress={reserve}
-          onClose={() => setModalVisible(false)}
-        />
+        {modalVisible && (
+          <PopUp
+            isVisible={modalVisible}
+            schedule={currentItem}
+            item={item}
+            onPress={reserve}
+            onClose={() => setModalVisible(false)}
+          />
+        )}
         <Title text='Seleccionar categoria' />
         <FlatList
           data={item.subcategories}

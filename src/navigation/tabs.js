@@ -4,6 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Home from '../screens/Home';
 import Promotions from '../screens/Promotions';
 import Bookings from '../screens/Bookings';
+import { Colors } from '../constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +13,7 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName='Bookings'
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: Colors.blue,
       }}
     >
       <Tab.Screen
@@ -33,7 +34,6 @@ function MyTabs() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name='bell' color={color} size={size} />
           ),
-          tabBarBadge: 3,
         }}
       />
       <Tab.Screen
@@ -42,7 +42,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Promos',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name='account' color={color} size={size} />
+            <MaterialCommunityIcons name='sale' color='red' size={size} />
           ),
         }}
       />
